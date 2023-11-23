@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
+import avatar from '../Img/dentist.png'
 import axios from 'axios';
 
 const Detail = () => {
@@ -20,10 +21,12 @@ const Detail = () => {
   return (
     <div>
       
-      <h1>Dentist {dentistSelected.name}</h1>
-      <h2>{dentistSelected.email}</h2>
-      <h2>{dentistSelected.phone}</h2>
-      <h2>{dentistSelected.website}</h2>
+      <h1>Dentist {dentistSelected.username}</h1>
+      <img src={avatar} alt="" />
+      <h2>Dr. {dentistSelected.name}</h2>
+      <h2>Email: {dentistSelected.email}</h2>
+      <h2>Phone: {dentistSelected.phone}</h2>
+      <h2>WenSite: {dentistSelected.website}</h2>
       
 
     </div>
