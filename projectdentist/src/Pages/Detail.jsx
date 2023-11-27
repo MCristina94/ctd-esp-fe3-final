@@ -26,7 +26,7 @@ const Detail = () => {
       <h2>Dr. {dentistSelected.name}</h2>
       <h2>Email: {dentistSelected.email}</h2>
       <h2>Phone: {dentistSelected.phone}</h2>
-      <h2>WenSite: {dentistSelected.website}</h2>
+      <h2>WebSite: {dentistSelected.website}</h2>
       
 
     </div>

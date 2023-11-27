@@ -10,11 +10,14 @@ const reducer = (state, action) => {
     switch(action.type){
         case 'GET-DENTISTS': //Trae la información de la api y la guarda en la lista (dentistList)
             return {...state, dentistList: action.payload}
+        case 'ADD-FAVS' :
+            return {...state, favs: [...state.favs, action.payload]}
     }
 }
 
 const initialState = {
     dentistList: [], 
+    favs: []
 }
 
 const Context = ({children}) => {
