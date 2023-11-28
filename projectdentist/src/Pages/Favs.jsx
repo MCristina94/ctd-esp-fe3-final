@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDentistState } from '../Context/globalContext'
 import Card from '../Components/Card';
+import {favsContainer} from '../Styles/Favs.module.css'
 
 const Favs = () => {
   const {state} = useDentistState();
@@ -14,13 +15,18 @@ const Favs = () => {
   return (
     <div>
       <h1>Your Favorites</h1>
-      {dentistSelected && dentistSelected.map((dentist) => {
-        return <div key={dentist.id}>
-          <Card dentist = {dentist}/>
+      
+      {dentistSelected && (
+        <div className={favsContainer}>
+          {dentistSelected.map((dentist) => (
+            <div key={dentist.id}>
+              <Card dentist={dentist} />
+            </div>
+          ))}
         </div>
-      })}
+      )}
     </div>
-  )
+  );
 }
 
 export default Favs

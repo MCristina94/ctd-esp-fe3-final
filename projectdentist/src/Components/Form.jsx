@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Message from './Message';
+import {formSt, inputData, btnForm} from '../Styles/Form.module.css'
 
 const Form = () => {
 
@@ -29,13 +30,19 @@ const Form = () => {
   return (  
     <div>
       <form onSubmit={handleSubmit}>
-        <label>Name</label>
-        <input type="text" value={customer.name} onChange={(event) => setCustomer({...customer, name: event.target.value})}/>
-        
-        <label>Email</label>
-        <input type="email" value={customer.email} onChange={(event) => setCustomer({...customer, email: event.target.value})}/>
-
-        <button>Send</button>
+        <div className={formSt}>
+          <div className={inputData}>
+            <label>Name: </label>
+            <input type="text" value={customer.name} onChange={(event) => setCustomer({...customer, name: event.target.value})}/>
+          </div>
+          <div className={inputData}>
+            <label>Email: </label>
+            <input type="email" value={customer.email} onChange={(event) => setCustomer({...customer, email: event.target.value})}/>
+          </div>
+          <div>
+           <button className={btnForm}>Send</button>
+          </div>
+        </div>
         {show && <Message customer = {customer}/>}
         {error && <h3 style={{color: 'red' }}>Please verify your information again.</h3>}
       </form>

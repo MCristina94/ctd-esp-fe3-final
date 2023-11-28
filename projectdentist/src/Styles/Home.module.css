@@ -4,3 +4,18 @@
     justify-content: space-around;
     margin: 5%;
 }
+.pImgFlex{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+    
+}
+.pHome{
+    margin-left: 10%;
+}
+.imgHome{
+    width: 40%; 
+    border-radius: 10%;
+    margin-top: 10%;
+}
