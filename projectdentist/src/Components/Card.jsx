@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
 import { useDentistState } from '../Context/globalContext'
-import avatar from '../Img/dentist.png'
+import avatar from '../Img/dentalavatar.png'
 import { Link } from 'react-router-dom';
+import {card, imgCard, buttonCard} from '../Styles/Card.module.css'
 
 const Card = ({dentist}) => {
   
@@ -21,15 +22,20 @@ const Card = ({dentist}) => {
   
 
   return (
-    <div>
+    <div className={card} >
+     
       <Link to={'/detail/' + dentist.id} >
-        <img  src={avatar} alt="avatar" />
-        <h3>{dentist.name}</h3>
-        <h4>{dentist.username}</h4>
+        <img className={imgCard} src={avatar} alt="avatar" /> 
+        <h3 style={{margin: '0'}}>{dentist.name}</h3>
+        <h4 style={{margin: '0'}}>{dentist.username}</h4>
       </Link>
-        <h4>Location: {dentist.address.city}</h4>
-        <button onClick={dentistStorage}>⭐</button>
-    </div>
+      <div style={{display:'flex', flexDirection: 'column'}}>
+        <h4 >Location: {dentist.address.city}</h4>
+        <button className = {buttonCard}onClick={dentistStorage}>⭐</button>
+      </div>
+        
+      </div>
+   
   )
 }
 

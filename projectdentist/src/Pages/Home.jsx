@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDentistState } from '../Context/globalContext'
 import Card from '../Components/Card';
+import {cardFlex} from '../Styles/Home.module.css'
 
 const Home = () => {
   
@@ -10,9 +11,11 @@ const Home = () => {
 
   return (
     <div>
-      <h1>Dentist</h1>
-      {/**Se recorre la lista de los dentistas, y se envia la información a la card, la cual renderiza la información necesaria */}
-      {state.dentistList.map(dentist => <Card key = {dentist.id} dentist = {dentist}/>)}
+      <h1>Dential Clinic - Enjoy a lot more</h1>
+      <div className={cardFlex}>
+        {/**Se recorre la lista de los dentistas, y se envia la información a la card, la cual renderiza la información necesaria */}
+        {state.dentistList.map(dentist => <Card key = {dentist.id} dentist = {dentist}/>)}
+      </div>
     </div>
   )
 }

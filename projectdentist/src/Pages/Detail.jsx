@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
-import avatar from '../Img/dentist.png'
+import avatar from '../Img/dentalavatar.png'
 import axios from 'axios';
 
 const Detail = () => {
