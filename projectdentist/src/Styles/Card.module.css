@@ -1,6 +1,6 @@
 .card{
     border-radius: 10%;
-    width: 200px; /* Establece el ancho fijo de la tarjeta */
+    max-width: 200px; /* Establece el ancho fijo de la tarjeta */
     height: 300px;
     padding: 2%;
     margin: 5%;
@@ -8,7 +8,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin: 5%;
+   
 }
 .imgCard{
     width: 80%;

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDentistState } from '../Context/globalContext'
 import avatar from '../Img/dentalavatar.png'
 import { Link } from 'react-router-dom';
@@ -7,7 +7,7 @@ import {card, imgCard, buttonCard} from '../Styles/Card.module.css'
 const Card = ({dentist}) => {
   
   const {state, dispatch} = useDentistState();
-
+  const [isFavorite, setIsFavorite] = useState(false);
   useEffect(()=> {
     localStorage.setItem('favorites', JSON.stringify([...state.favs]));
    }, [state.favs])
@@ -17,8 +17,9 @@ const Card = ({dentist}) => {
     if(findFav){
       alert('Ya existe en tu lista de favoritos')
     }else{
-     dispatch({type: 'ADD-FAVS', payload: dentist })  
-    localStorage.setItem('favorites', JSON.stringify([...state.favs]))   
+      dispatch({type: 'ADD-FAVS', payload: dentist })  
+      localStorage.setItem('favorites', JSON.stringify([...state.favs]))   
+      setIsFavorite(true);
     }
     
    }
@@ -37,7 +38,7 @@ const Card = ({dentist}) => {
       </Link>
       <div style={{display:'flex', flexDirection: 'column'}}>
         <h4 >Location: {dentist.address.city}</h4>
-        <button className = {buttonCard}onClick={dentistStorage}>⭐</button>
+        <button className = {buttonCard}onClick={dentistStorage}>{isFavorite? '💫' : '⭐'}</button>
       </div>
         
       </div>

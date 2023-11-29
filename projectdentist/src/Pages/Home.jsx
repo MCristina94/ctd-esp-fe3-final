@@ -12,7 +12,7 @@ const Home = () => {
 
   return (
     <div>
-      <h1>Dental Clinic - Enjoy a lot more</h1>
+      <h1 style={{marginTop: '2%'}}>Dental Clinic - Enjoy a lot more</h1>
       <div className={pImgFlex}>
         <div className={pHome}>
           <h2 style={{color: '#008CCE', fontSize: '30px' }}>Welcome to Dental Clinic!</h2>
