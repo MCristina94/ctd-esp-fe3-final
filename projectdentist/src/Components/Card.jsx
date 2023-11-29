@@ -13,8 +13,14 @@ const Card = ({dentist}) => {
    }, [state.favs])
   
   function dentistStorage () {
-    dispatch({type: 'ADD-FAVS', payload: dentist })  
-    localStorage.setItem('favorites', JSON.stringify([...state.favs]))  
+    const findFav = state.favs.find(fav => dentist.id === fav.id);
+    if(findFav){
+      alert('Ya existe en tu lista de favoritos')
+    }else{
+     dispatch({type: 'ADD-FAVS', payload: dentist })  
+    localStorage.setItem('favorites', JSON.stringify([...state.favs]))   
+    }
+    
    }
  
   //Ingresa la información de cada dentista, la cual proviene de dentistList
