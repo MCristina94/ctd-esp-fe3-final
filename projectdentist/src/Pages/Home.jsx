@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDentistState } from '../Context/globalContext'
 import Card from '../Components/Card';
-import {cardFlex, pImgFlex, pHome, imgHome} from '../Styles/Home.module.css'
+import {cardFlex, pImgFlex, pHome, imgHome, darkTheme} from '../Styles/Home.module.css'
 import girl from '../Img/lady.jpg'
 
 const Home = () => {
@@ -11,8 +11,8 @@ const Home = () => {
   console.log({state});
 
   return (
-    <div>
-      <h1 style={{marginTop: '2%'}}>Dental Clinic - Enjoy a lot more</h1>
+    <div className={`${!state.theme ? darkTheme : undefined}`}>
+      <h1 style={{padding: '2%', margin: '0'}}>Dental Clinic - Enjoy a lot more</h1>
       <div className={pImgFlex}>
         <div className={pHome}>
           <h2 style={{color: '#008CCE', fontSize: '30px' }}>Welcome to Dental Clinic!</h2>

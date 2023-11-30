@@ -12,12 +12,15 @@ const reducer = (state, action) => {
             return {...state, dentistList: action.payload}
         case 'ADD-FAVS' :
             return {...state, favs: [...state.favs, action.payload]}
+        case 'CHANGE-THEME' :
+            return {...state, theme: !state.theme}
     }
 }
 
 const initialState = {
     dentistList: [], 
-    favs: []
+    favs: [],
+    theme: true
 }
 
 const Context = ({children}) => {

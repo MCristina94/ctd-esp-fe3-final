@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDentistState } from '../Context/globalContext'
 import avatar from '../Img/dentalavatar.png'
 import { Link } from 'react-router-dom';
-import {card, imgCard, buttonCard} from '../Styles/Card.module.css'
+import {card, imgCard, buttonCard, darkTheme} from '../Styles/Card.module.css'
 
 const Card = ({dentist}) => {
   
@@ -29,7 +29,7 @@ const Card = ({dentist}) => {
   
 
   return (
-    <div className={card} >
+    <div className={`${card} ${!state.theme ? darkTheme : undefined}`} >
      
       <Link to={'/detail/' + dentist.id} >
         <img className={imgCard} src={avatar} alt="avatar" /> 

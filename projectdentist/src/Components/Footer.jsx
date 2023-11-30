@@ -4,10 +4,12 @@ import iconoFb from '../Img/ico-facebook.png'
 import iconoIg from '../Img/ico-instagram.png'
 import iconoWp from '../Img/ico-whatsapp.png'
 import iconoTiktok from '../Img/ico-tiktok.png'
-import {footerSt, icono, sentenceF} from '../Styles/Footer.module.css'
+import {footerSt, icono, sentenceF, darkTheme} from '../Styles/Footer.module.css'
+import { useDentistState } from '../Context/globalContext'
 const Footer = () => {
+  const {state} = useDentistState();
   return (
-    <div className={footerSt}>
+    <div className={`${footerSt} ${!state.theme ? darkTheme : undefined}`}>
       <div>
         <img style={{width: '20%'}} src={logoFooter} alt="logo footer" />
         <h3 className={sentenceF}>Show off a radiant smile!</h3>
