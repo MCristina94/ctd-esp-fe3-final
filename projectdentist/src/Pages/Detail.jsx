@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import avatar from '../Img/dentalavatar.png'
 import axios from 'axios';
-import {detailContainer} from '../Styles/Detail.module.css'
+import {detailContainer, darkTheme} from '../Styles/Detail.module.css'
+import { useDentistState } from '../Context/globalContext';
 
 const Detail = () => {
-
+  const {state} = useDentistState();
   const [dentistSelected, setDentistSelected] = useState({});
   const params = useParams();
     console.log(params);
@@ -20,9 +21,9 @@ const Detail = () => {
   },[])
 
   return (
-    <div>
-      <h1 style={{margin: '5%'}}>Dentist {dentistSelected.username}</h1>
-      <div className={detailContainer}>
+    <div className={`${!state.theme ? darkTheme : undefined}`} >
+      <h1 style={{margin: '0', padding: '5%'}}>Dentist {dentistSelected.username}</h1>
+      <div className={`${detailContainer} ${!state.theme ? darkTheme : undefined}`}>
         <div>
           <img style={{width: '50%'}} src={avatar} alt="avatar dentist" />
         </div>
