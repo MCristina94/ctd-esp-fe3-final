@@ -3,4 +3,9 @@
     flex-wrap: wrap;
     justify-content: space-around;
     margin: 5%;
+    margin-bottom: 0;
+}
+.darkTheme{
+    background-color: black;
+    color:white;
 }
